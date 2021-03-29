@@ -1,0 +1,154 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ersoluciones.mx/soap/pokeapi"
+           targetNamespace="http://ersoluciones.mx/soap/pokeapi" elementFormDefault="qualified">
+
+    <xs:element name="getAbilitiesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBaseExperienceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getHeldItemsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLocationAreaEncountersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAbilitiesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="abilities" type="tns:ability" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBaseExperienceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="base_experience" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getHeldItemsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="held_items" type="tns:held_item" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLocationAreaEncountersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="location_area_encounters" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="pokemon">
+        <xs:sequence>
+            <xs:element name="abilities" type="tns:ability" maxOccurs="unbounded"/>
+            <xs:element name="base_experience" type="xs:integer"/>
+            <xs:element name="held_items" type="tns:held_item" maxOccurs="unbounded"/>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="location_area_encounters" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="held_item">
+        <xs:sequence>
+            <xs:element name="item" type="tns:item"/>
+            <xs:element name="version_details" type="tns:version_detail" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="version_detail">
+        <xs:sequence>
+            <xs:element name="rarity" type="xs:integer"/>
+            <xs:element name="version" type="tns:version"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ability">
+        <xs:sequence>
+            <xs:element name="ability" type="tns:abilityLink"/>
+            <xs:element name="is_hidden" type="xs:boolean"/>
+            <xs:element name="slot" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="abilityLink">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="version">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="item">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

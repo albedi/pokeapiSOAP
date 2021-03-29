@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="cd26c681-e2ad-4703-8b27-fe9dce04400a" activeEnvironment="Default" name="PokeAPI" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="30319130-2139-4e56-98cc-9148b3f9d540" wsaVersion="NONE" name="PokeapiPortSoap11" type="wsdl" bindingName="{http://ersoluciones.mx/soap/pokeapi}PokeapiPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/pokeapi.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/pokeapi.wsdl"><con:part><con:url>http://localhost:8080/ws/pokeapi.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ersoluciones.mx/soap/pokeapi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ersoluciones.mx/soap/pokeapi" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ersoluciones.mx/soap/pokeapi">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://ersoluciones.mx/soap/pokeapi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAbilitiesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBaseExperienceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHeldItemsRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getNameRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLocationAreaEncountersRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAbilitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="abilities" type="tns:ability"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBaseExperienceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="base_experience" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHeldItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="held_items" type="tns:held_item"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLocationAreaEncountersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="location_area_encounters" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="pokemon">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="abilities" type="tns:ability"/>
+          <xs:element name="base_experience" type="xs:integer"/>
+          <xs:element maxOccurs="unbounded" name="held_items" type="tns:held_item"/>
+          <xs:element name="id" type="xs:integer"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="location_area_encounters" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="held_item">
+        <xs:sequence>
+          <xs:element name="item" type="tns:item"/>
+          <xs:element maxOccurs="unbounded" name="version_details" type="tns:version_detail"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="version_detail">
+        <xs:sequence>
+          <xs:element name="rarity" type="xs:integer"/>
+          <xs:element name="version" type="tns:version"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ability">
+        <xs:sequence>
+          <xs:element name="ability" type="tns:abilityLink"/>
+          <xs:element name="is_hidden" type="xs:boolean"/>
+          <xs:element name="slot" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="abilityLink">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="version">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="item">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getBaseExperienceRequest">
+    <wsdl:part element="tns:getBaseExperienceRequest" name="getBaseExperienceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNameRequest">
+    <wsdl:part element="tns:getNameRequest" name="getNameRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getIdResponse">
+    <wsdl:part element="tns:getIdResponse" name="getIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLocationAreaEncountersResponse">
+    <wsdl:part element="tns:getLocationAreaEncountersResponse" name="getLocationAreaEncountersResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbilitiesRequest">
+    <wsdl:part element="tns:getAbilitiesRequest" name="getAbilitiesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBaseExperienceResponse">
+    <wsdl:part element="tns:getBaseExperienceResponse" name="getBaseExperienceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbilitiesResponse">
+    <wsdl:part element="tns:getAbilitiesResponse" name="getAbilitiesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHeldItemsResponse">
+    <wsdl:part element="tns:getHeldItemsResponse" name="getHeldItemsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNameResponse">
+    <wsdl:part element="tns:getNameResponse" name="getNameResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHeldItemsRequest">
+    <wsdl:part element="tns:getHeldItemsRequest" name="getHeldItemsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLocationAreaEncountersRequest">
+    <wsdl:part element="tns:getLocationAreaEncountersRequest" name="getLocationAreaEncountersRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getIdRequest">
+    <wsdl:part element="tns:getIdRequest" name="getIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PokeapiPort">
+    <wsdl:operation name="getBaseExperience">
+      <wsdl:input message="tns:getBaseExperienceRequest" name="getBaseExperienceRequest"></wsdl:input>
+      <wsdl:output message="tns:getBaseExperienceResponse" name="getBaseExperienceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getName">
+      <wsdl:input message="tns:getNameRequest" name="getNameRequest"></wsdl:input>
+      <wsdl:output message="tns:getNameResponse" name="getNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getId">
+      <wsdl:input message="tns:getIdRequest" name="getIdRequest"></wsdl:input>
+      <wsdl:output message="tns:getIdResponse" name="getIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLocationAreaEncounters">
+      <wsdl:input message="tns:getLocationAreaEncountersRequest" name="getLocationAreaEncountersRequest"></wsdl:input>
+      <wsdl:output message="tns:getLocationAreaEncountersResponse" name="getLocationAreaEncountersResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbilities">
+      <wsdl:input message="tns:getAbilitiesRequest" name="getAbilitiesRequest"></wsdl:input>
+      <wsdl:output message="tns:getAbilitiesResponse" name="getAbilitiesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHeldItems">
+      <wsdl:input message="tns:getHeldItemsRequest" name="getHeldItemsRequest"></wsdl:input>
+      <wsdl:output message="tns:getHeldItemsResponse" name="getHeldItemsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PokeapiPortSoap11" type="tns:PokeapiPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getBaseExperience">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBaseExperienceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBaseExperienceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getName">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getNameRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getId">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLocationAreaEncounters">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getLocationAreaEncountersRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLocationAreaEncountersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbilities">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAbilitiesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAbilitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHeldItems">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getHeldItemsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHeldItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PokeapiPortService">
+    <wsdl:port binding="tns:PokeapiPortSoap11" name="PokeapiPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="eb0281c4-9755-4643-af0f-bcea387334e4" isOneWay="false" action="" name="getAbilities" bindingOperationName="getAbilities" type="Request-Response" outputName="getAbilitiesResponse" inputName="getAbilitiesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1cff0045-215e-495b-8db0-1e8d7f0415d2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getAbilitiesRequest>\r
+         <pok:name>ditto</pok:name>\r
+      </pok:getAbilitiesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getAbilitiesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4b2f258b-ce60-4505-9914-4f5786ca75bc" isOneWay="false" action="" name="getBaseExperience" bindingOperationName="getBaseExperience" type="Request-Response" outputName="getBaseExperienceResponse" inputName="getBaseExperienceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f0f252a1-6c54-428e-97a8-2573edfd9bfe" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getBaseExperienceRequest>\r
+         <pok:name>?</pok:name>\r
+      </pok:getBaseExperienceRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getBaseExperienceRequest"/></con:call></con:operation><con:operation id="c29ed28b-c764-40ff-b0d2-730c3f6b8890" isOneWay="false" action="" name="getName" bindingOperationName="getName" type="Request-Response" outputName="getNameResponse" inputName="getNameRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8d55fb15-9fcd-4a20-b06e-6c6025fcdb5b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getNameRequest>\r
+         <pok:name>131</pok:name>\r
+      </pok:getNameRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getNameRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6204e24f-bb12-4a5f-b5ed-c4d6f3395715" isOneWay="false" action="" name="getId" bindingOperationName="getId" type="Request-Response" outputName="getIdResponse" inputName="getIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2ba70010-3ee0-45db-9ca0-fa66b1507075" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getIdRequest>\r
+         <pok:name>lapras</pok:name>\r
+      </pok:getIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="11f95d29-37c9-487a-9e5f-9e563c65978e" isOneWay="false" action="" name="getLocationAreaEncounters" bindingOperationName="getLocationAreaEncounters" type="Request-Response" outputName="getLocationAreaEncountersResponse" inputName="getLocationAreaEncountersRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2e27247e-ee92-4c64-a2a7-1b9b51fa5d58" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getLocationAreaEncountersRequest>\r
+         <pok:name>?</pok:name>\r
+      </pok:getLocationAreaEncountersRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getLocationAreaEncountersRequest"/></con:call></con:operation><con:operation id="09abdfa8-1a71-41be-94dc-b4e3484bc6bf" isOneWay="false" action="" name="getHeldItems" bindingOperationName="getHeldItems" type="Request-Response" outputName="getHeldItemsResponse" inputName="getHeldItemsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="03eb8d09-b2b2-4344-bd7b-c458945c2cb6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://ersoluciones.mx/soap/pokeapi">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:getHeldItemsRequest>\r
+         <pok:name>?</pok:name>\r
+      </pok:getHeldItemsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ersoluciones.mx/soap/pokeapi/PokeapiPort/getHeldItemsRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

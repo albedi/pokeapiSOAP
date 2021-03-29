@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:gs="http://ersoluciones.mx/soap/pokeapi">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getInfoRequest>
+         <gs:name>Spain</gs:name>
+      </gs:getInfoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

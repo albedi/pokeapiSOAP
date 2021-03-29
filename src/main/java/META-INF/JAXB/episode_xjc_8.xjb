@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2021.03.28 a las 08:21:55 PM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://ersoluciones.mx/soap/pokeapi">
+    <schemaBindings map="false">
+      <package name="mx.ersoluciones.soap.pokeapi"/>
+    </schemaBindings>
+    <bindings scd="tns:getAbilitiesRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetAbilitiesRequest"/>
+    </bindings>
+    <bindings scd="tns:getBaseExperienceRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetBaseExperienceRequest"/>
+    </bindings>
+    <bindings scd="tns:getHeldItemsRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetHeldItemsRequest"/>
+    </bindings>
+    <bindings scd="tns:getIdRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getNameRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetNameRequest"/>
+    </bindings>
+    <bindings scd="tns:getLocationAreaEncountersRequest">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetLocationAreaEncountersRequest"/>
+    </bindings>
+    <bindings scd="tns:getAbilitiesResponse">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetAbilitiesResponse"/>
+    </bindings>
+    <bindings scd="~tns:ability">
+      <class ref="mx.ersoluciones.soap.pokeapi.Ability"/>
+    </bindings>
+    <bindings scd="tns:getBaseExperienceResponse">
+      <class ref="mx.ersoluciones.soap.pokeapi.GetBaseExperienceResponse"/>
+    </bindings>
+    <bindings scd="~tns:pokemon">
+      <class ref="mx.ersoluciones.soap.pokeapi.Pokemon"/>
+    </bindings>
+    <bindings scd="~tns:held_item">
+      <class ref="mx.ersoluciones.soap.pokeapi.HeldItem"/>
+    </bindings>
+    <bindings scd="~tns:version_detail">
+      <class ref="mx.ersoluciones.soap.pokeapi.VersionDetail"/>
+    </bindings>
+    <bindings scd="~tns:abilityLink">
+      <class ref="mx.ersoluciones.soap.pokeapi.AbilityLink"/>
+    </bindings>
+    <bindings scd="~tns:version">
+      <class ref="mx.ersoluciones.soap.pokeapi.Version"/>
+    </bindings>
+    <bindings scd="~tns:item">
+      <class ref="mx.ersoluciones.soap.pokeapi.Item"/>
+    </bindings>
+  </bindings>
+</bindings>
+
